@@ -10,6 +10,30 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+
+	//$("a.thumbnail").click(projectClick);
+	$("a.thumbnail").click(function(){
+		projectClick();
+	});
+
+}
+//um comment
+function projectClick(e) { 
+	 // Cancel the default action, which prevents the page from reloading
+    e.preventDefault();
+
+    var nombre = $(this).closest(".foo");
+	$(this).find('h3').text(anagrammedName(nombre));
+   
+/*
+    var containingProject = $(this).closest(".project");
+    var description = $(containingProject).find(".project-description");
+    if (description.length == 0) {
+       $(".project-description").fadeIn("slow", "linear");
+       $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
+    } else {
+       $(".project-description").fadeToggle("slow", "linear");
+    } */
 }
 
 function anagrammedName(name) {
